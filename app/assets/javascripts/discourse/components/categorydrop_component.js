@@ -9,10 +9,10 @@
 Discourse.CategoryDropComponent = Ember.Component.extend({
   classNameBindings: ['category::no-category', 'categories:has-drop'],
   tagName: 'li',
-
+  /* Devdutta change up and down arrow */
   iconClass: function() {
-    if (this.get('expanded')) { return "fa fa-caret-down"; }
-    return "fa fa-caret-right";
+    if (this.get('expanded')) { return "fa fa-caret-up"; }
+    return "fa fa-caret-down";
   }.property('expanded'),
 
   allCategoriesUrl: function() {
