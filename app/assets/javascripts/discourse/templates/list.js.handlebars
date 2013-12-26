@@ -4,15 +4,7 @@
   <div class="container">
 
     {{bread-crumbs category=category categories=categories noSubcategories=noSubcategories}}
-    {{!-- {{Devdutta test dual dropdown}} --}}
     
-    
-    <section class="menu-dropdown" id="list-menu-dropdown">
-      <ul class="nav" id='list-menu-options'>
-      {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
-    </ul>
-   </section>
-
    <ul class="nav nav-pills" id='category-filter'>
       {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
     </ul>
