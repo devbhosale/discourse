@@ -4,6 +4,7 @@
   <div class="container">
 
     {{bread-crumbs category=category categories=categories noSubcategories=noSubcategories}}
+     {{bread-crumbs category=category categories=availableNavItems noSubcategories=noSubcategories}}
     
    <ul class="nav nav-pills" id='category-filter'>
       {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
