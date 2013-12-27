@@ -4,11 +4,18 @@
   <div class="container">
 
     {{bread-crumbs category=category categories=categories noSubcategories=noSubcategories}}
-     {{bread-crumbs category=category categories=availableNavItems noSubcategories=noSubcategories}}
-    
-   <ul class="nav nav-pills" id='category-filter'>
-      {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
+     
+     <div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+     View
+    <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" id='category-filter'>
+    <!-- dropdown menu links -->
     </ul>
+    </div>
+    
+  
 
     {{#if canCreateTopic}}
       <button class='btn btn-default' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
