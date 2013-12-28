@@ -13,7 +13,7 @@
        data-toggle="dropdown"
        href="#">
         View By | 
-        {{each navItem in availableNavItems}}
+        {{#each navItem in availableNavItems}}
           {{#if Discourse.NavItemView.isActive }}
             {{ Discourse.NavItemView.name }}
           {{/if}}
