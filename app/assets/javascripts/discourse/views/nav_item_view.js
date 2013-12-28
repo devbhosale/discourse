@@ -8,16 +8,12 @@
 **/
 Discourse.NavItemView = Discourse.View.extend({
   tagName: 'li',
-  classNameBindings: ['isActive:active', 'content.hasIcon:has-icon'],
+  classNameBindings: ['active', 'content.hasIcon:has-icon'],
   attributeBindings: ['title'],
 
   hidden: Em.computed.not('content.visible'),
   shouldRerender: Discourse.View.renderIfChanged('content.count'),
   active: Discourse.computed.propertyEqual('content.filterMode', 'controller.filterMode'),
-  /** Devdutta added isActive function **/
-  isActive: function() {
-    return false;
-  }.property(),
   
   title: function() {
     var categoryName = this.get('content.categoryName'),
