@@ -39,6 +39,11 @@
       {{/if}}
     </div>
   {{/if}}
+  <div class="bi_category">
+  {{#unless controller.category}}
+  {{categoryLink category}}
+  {{/unless}}
+  </div>
 </td>
 
 {{#unless controller.category}}
