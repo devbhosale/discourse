@@ -4,6 +4,9 @@
   <div class="container">
 
     {{bread-crumbs category=category categories=categories noSubcategories=noSubcategories}}
+    
+    {{! Devdutta mod begin, added dropdown menu removed original category filter }}
+    
     <ul class="nav">
     <li class="dropdown">
     <a class="dropdown-toggle"
@@ -12,16 +15,15 @@
         Dropdown
         <b class="caret"></b>
       </a>
-    <ul class="dropdown-menu" id="bi_listdropdown">
+    <ul class="dropdown-menu" id="category-filter">
        {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
     </ul>
   </li>
   </ul>
   
-    <ul class="nav nav-pills" id='category-filter'>
-      {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
-    </ul>
-
+  
+    
+  {{! Devdutta mod end removed original category filter }}
      
     {{#if canCreateTopic}}
       <button class='btn btn-default' {{action createTopic}}><i class='fa fa-plus'></i>{{i18n topic.create}}</button>
