@@ -1,3 +1,11 @@
+<td class='posters'>
+  {{#each posters}}
+   @"{{user.username}}"
+    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+  {{/each}}
+</td>
+
+
 {{#if controller.currentUser.id}}
   <td class='star'>
     <a {{bindAttr class=":star :fa :fa-star starred:starred"}} {{action toggleStar this}} href='#' {{bindAttr title="favoriteTooltip"}}></a>
@@ -46,17 +54,7 @@
   </div>
 </td>
 
-{{#unless controller.category}}
-<td class='category'>
-  {{categoryLink category}}
-</td>
-{{/unless}}
 
-<td class='posters'>
-  {{#each posters}}
-    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
-  {{/each}}
-</td>
 
 <td class='num posts'><a href="{{lastUnreadUrl}}" class='badge-posts'>{{number posts_count numberKey="posts_long"}}</a></td>
 
