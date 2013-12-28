@@ -4,27 +4,20 @@
   <div class="container">
 
     {{bread-crumbs category=category categories=categories noSubcategories=noSubcategories}}
-    
-    <a class='icon expand'
-               href='#'
-               data-dropdown="bimenu-dropdown"
-               title='View by'>View by
-            </a>
-  <div class="d-dropdown" id="bimenu-dropdown"> 
-  <ul class="location-links">
-      <li>{{partial "siteMap/adminLink"}}</li>
-      <li>{{partial "siteMap/flaggedPostsLinks"}}</li>
+    <ul class="nav">
+    <li class="dropdown">
+    <a class="dropdown-toggle"
+       data-toggle="dropdown"
+       href="#">
+        Dropdown
+        <b class="caret"></b>
+      </a>
+    <ul class="dropdown-menu">
+       {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
+    </ul>
+  </li>
   </ul>
-   </div>
-   
-
-            
-  <section class="d-dropdown" id="site-map-dropdown">
-  <ul class="location-links">
-      <li>{{partial "siteMap/adminLink"}}</li>
-      <li>{{partial "siteMap/flaggedPostsLinks"}}</li>
-  </ul>
-  </section>
+  
     <ul class="nav nav-pills" id='category-filter'>
       {{each availableNavItems itemViewClass="Discourse.NavItemView"}}
     </ul>
