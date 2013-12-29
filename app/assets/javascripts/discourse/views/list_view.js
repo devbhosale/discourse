@@ -15,7 +15,7 @@ Discourse.ListView = Discourse.View.extend({
      $('#bi_viewby').text() = 'View By | ' + $('#category-filter li.active a', '.list-controls').text();
      alert($('#bi_viewby','.list-controls').text() + "***" + $('#category-filter li.active a','.list-controls').text() );
      
-     this.$().on('click', '#category-filter', function(){
+     $('#category-filter').on('click',  function(e){
      $('#bi_viewby','.list-controls').text() = 'View By | ' + $('#category-filter li.active a','.list-controls').text();
      alert($('#bi_viewby','.list-controls').text() + "***" + $('#category-filter li.active a','.list-controls').text() );
       // do stuff with jQuery
