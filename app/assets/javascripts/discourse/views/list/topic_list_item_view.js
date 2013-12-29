@@ -29,7 +29,7 @@ Discourse.TopicListItemView = Discourse.GroupedView.extend({
     
     //devdutta
     
-    $(".topic-list-item tr").find("td:gt(0)").remove();
+    $(".topic-list-item posters").find("a:gt(0)").remove();
     
     var session = Discourse.Session.current();
 
