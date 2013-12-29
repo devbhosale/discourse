@@ -1,12 +1,16 @@
+//  return the first item of a list only
+// usage: {{#first items}}{{name}}{{/first}}
+Handlebars.registerHelper('first', function(context, block) {
+  return block(context[0]);
+});
+
 /** added Devdutta
  *  Usage
  * {{#each_with_index records}}
  *   <li class="legend_item{{index}}"><span></span>{{Name}}</li>
  *   {{/each_with_index}}
  **/
-Handlebars.registerHelper('first', function(context, block) {
-  return block(context[0]);
-});
+
 
 Handlebars.registerHelper("each_with_index", function(array, block) {
 	var buffer = "";
