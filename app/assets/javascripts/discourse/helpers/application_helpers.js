@@ -1,5 +1,8 @@
-
 /** added Devdutta
+ *  Usage
+ * {{#each_with_index records}}
+ *   <li class="legend_item{{index}}"><span></span>{{Name}}</li>
+ *   {{/each_with_index}}
  **/
 
 Handlebars.registerHelper("each_with_index", function(array, block) {
@@ -17,6 +20,24 @@ Handlebars.registerHelper("each_with_index", function(array, block) {
 	// return the finished buffer
 	return buffer;
  
+});
+
+/**
+* @auther: Devdutta
+* {{#ifequal current_page "home"}}
+* home
+* {{else}}
+* home
+* {{/ifequal}}
+**/
+
+Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
+    if (val1 === val2) {
+        return fn();
+    }
+    else if (elseFn) {
+        return elseFn();
+    }
 });
 /**
   Breaks up a long string
