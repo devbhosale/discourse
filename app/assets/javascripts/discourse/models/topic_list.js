@@ -179,9 +179,9 @@ Discourse.TopicList.reopenClass({
       t.posters.forEach(function(p) {
         
         p.user = users[p.user_id];
-        var valueToPush = new Array();
-        valueToPush["currentIndex"] = i;
-        push(valueToPush);
+        
+        p.currentIndex = i;
+        
         i++;
       });
       i=0;
