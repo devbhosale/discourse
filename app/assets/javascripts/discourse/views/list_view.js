@@ -12,6 +12,8 @@ Discourse.ListView = Discourse.View.extend({
   
   didInsertElement: function() {
      this._super();
+     $('#bi_viewby',this).text() = 'View By | ' + $('#category-filter li.active a',this).text();
+     alert($('#bi_viewby',this).text() + "***" + $('#category-filter li.active a',this).text() );
      
      this.$().on('click', '#category-filter', function(){
      $('#bi_viewby',this).text() = 'View By | ' + $('#category-filter li.active a',this).text();
