@@ -2,9 +2,10 @@
 
 
 <td class='posters'>
-   {{#each usr in posters}}
-   Index: {{index usr posters}} EL @{{usr.user.username}} 
-      <a href="{{usr.user.path}}" class="{{usr.extras}}">{{avatar this usernamePath="usr.user.username" imageSize="small"}}</a>
+   {{#each posters}}
+      {{# ifequal user.currentindex 0 }} @{{user.username}} 
+       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+      {{/ifequal}}
    {{/each}}
  </td>
 
