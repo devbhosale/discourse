@@ -11,13 +11,13 @@ Discourse.ListView = Discourse.View.extend({
   templateName: 'list',
   
   didInsertElement: function() {
-     alert('test');
-     $('#bi_viewby',this).text() = 'View By | ' + $('#category-filter li.active a',this).text();
-     alert($('#bi_viewby',this).text() + "***" + $('#category-filter li.active a',this).text() );
+     
+     $('#bi_viewby').text() = 'View By | ' + $('#category-filter li.active a', '.list-controls').text();
+     alert($('#bi_viewby','.list-controls').text() + "***" + $('#category-filter li.active a','.list-controls').text() );
      
      this.$().on('click', '#category-filter', function(){
-     $('#bi_viewby',this).text() = 'View By | ' + $('#category-filter li.active a',this).text();
-     alert($('#bi_viewby',this).text() + "***" + $('#category-filter li.active a',this).text() );
+     $('#bi_viewby','.list-controls').text() = 'View By | ' + $('#category-filter li.active a','.list-controls').text();
+     alert($('#bi_viewby','.list-controls').text() + "***" + $('#category-filter li.active a','.list-controls').text() );
       // do stuff with jQuery
      });
   }
