@@ -2,10 +2,10 @@
 
 
 <td class='posters'>
-   {{#each posters}}
-      I {{@index}}: {{this}} K {{@key}}: {{this}} EL @{{user.username}} 
+   {{#each_with_index posters}}
+      I {{index}} EL @{{user.username}} 
       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
-   {{/each}}
+   {{/each_with_index}}
  </td>
 
 
