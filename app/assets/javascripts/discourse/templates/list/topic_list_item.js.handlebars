@@ -1,8 +1,11 @@
+{{! Devdutta moved the column order. Changed posters to display only first  }}
+
 <td class='posters'>
-  {{#each posters}}
-   {{_view.contentIndex}}
+  {{#each_with_index posters}}
+   {{#ifequal index 0 }}
     @{{user.username}}
     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+    {{/ifequal}}
   {{/each}}
 </td>
 
