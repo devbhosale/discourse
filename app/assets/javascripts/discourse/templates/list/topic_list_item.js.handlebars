@@ -1,6 +1,13 @@
 {{!-- Devdutta moved the column order. Changed posters to display only first  --}}
 
 <td class='posters'>
+{{#first items}}
+@{{user.username}} 
+    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+{{/first}}
+</td>
+
+<td class='posters'>
   {{#each_with_index posters}}
    {{#ifequal index 0 }}
     @{{user.username}} {{index}}
