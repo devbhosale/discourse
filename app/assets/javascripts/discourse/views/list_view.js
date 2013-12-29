@@ -10,8 +10,9 @@
 Discourse.ListView = Discourse.View.extend({
   
   didInsertElement: function() {
-  
-  
+     
+     $(".topic-list-item .posters").find("a:gt(0)").remove();
+     
      $('#category-filter').on('click',  function(e){
      $('#bi_viewby').first().text( 'View By | ' +  $(e.target).text() ) ;
      $("#bi_view_ul li > a").first().append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
