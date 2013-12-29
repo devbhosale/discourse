@@ -48,6 +48,19 @@ Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
 });
 
 /** Devdutta added foreach **/
+/** usage
+ *  <div class="carousel-inner">
+		{{#foreach photos}}
+		<div class="item {{#if $first}} active {{/if}}">
+			<div class="thumbnail">
+				<a href="{{url}}" target="_blank">
+					<img alt="{{title}}" src="{{url}}">
+				</a>
+			</div>
+		</div>
+		{{/foreach}}
+	</div>
+ **/
 
 Handlebars.registerHelper("foreach",function(arr,options) {
     if(options.inverse && !arr.length)
