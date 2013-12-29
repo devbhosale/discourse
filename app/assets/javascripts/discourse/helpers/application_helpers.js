@@ -1,3 +1,8 @@
+Ember.Handlebars.registerBoundHelper('index', function(objectInCollection, collection) {
+  return collection.indexOf(objectInCollection);
+});
+
+
 //  return the first item of a list only
 // usage: {{#first items}}{{name}}{{/first}}
 Handlebars.registerHelper('first', function(context, block) {
