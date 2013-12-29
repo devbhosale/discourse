@@ -8,15 +8,15 @@
 </td>
 
 <td class='posters'>
-  {{#each_with_index posters}}
-   {{#ifequal index 0 }}
-    @{{user.username}} {{index}}
-    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
-    {{else}}
-    @{{user.username}} {{index}}
-    <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
-    {{/ifequal}}
-  {{/each_with_index}}
+{{#foreach posters}}
+  {{#if $first}}
+	F @{{user.username}} <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}
+	 </a> 
+     {{else}}	 
+     EL @{{user.username}} 
+     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+	 {{/if}}
+  {{/foreach}}
 </td>
 
 
