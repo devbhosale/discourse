@@ -174,9 +174,14 @@ Discourse.TopicList.reopenClass({
 
     return result.topic_list.topics.map(function (t) {
       t.category = categories.findBy('id', t.category_id);
+      // devdutta, add index to posters
+      var i = 0;
       t.posters.forEach(function(p) {
         p.user = users[p.user_id];
+        p.currentindex = i;
+        i++;
       });
+      i=0;
       return Discourse.Topic.create(t);
     });
   },
