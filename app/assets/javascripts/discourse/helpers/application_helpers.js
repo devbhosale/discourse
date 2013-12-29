@@ -1,3 +1,23 @@
+
+/** added Devdutta
+ **/
+
+Handlebars.registerHelper("each_with_index", function(array, block) {
+	var buffer = "";
+	for (var i = 0, j = array.length; i < j; i++) {
+		var item = array[i];
+ 
+		// stick an index property onto the item, starting with 0, may make configurable later
+		item.index = i;
+ 
+		// render the inside of the block
+		buffer += block.fn(item);
+	}
+ 
+	// return the finished buffer
+	return buffer;
+ 
+});
 /**
   Breaks up a long string
 
