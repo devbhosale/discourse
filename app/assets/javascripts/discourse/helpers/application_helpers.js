@@ -4,6 +4,9 @@
  *   <li class="legend_item{{index}}"><span></span>{{Name}}</li>
  *   {{/each_with_index}}
  **/
+Handlebars.registerHelper('first', function(context, block) {
+  return block(context[0]);
+});
 
 Handlebars.registerHelper("each_with_index", function(array, block) {
 	var buffer = "";
