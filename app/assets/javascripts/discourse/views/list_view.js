@@ -13,11 +13,12 @@ Discourse.ListView = Discourse.View.extend({
   
   
      $('#category-filter').on('click',  function(e){
-     $('#bi_viewby').text( 'View By | ' +  $(e.target).text()  +'<i class="fa fa-caret-down"></i> ') ;
-     
+     $('#bi_viewby').text( 'View By | ' +  $(e.target).text() ) ;
+     $("#bi_view_ul li > a").append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
      });
      
-     $('#bi_viewby').text( 'View By | ' + $(e.target).text() +'<i class="fa fa-caret-down"></i> ' ) ;
+     $('#bi_view_ul li a').text( 'View By | ' + $('#category-filter li.active a', '.list-controls').text()) ;
+     $("#bi_view_ul li a").append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
      
      
   }
