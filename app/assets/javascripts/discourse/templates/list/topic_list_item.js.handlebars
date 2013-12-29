@@ -7,17 +7,7 @@
 {{/first}}
 </td>
 
-<td class='posters'>
-{{#foreach posters}}
-  {{#if $first}}
-	F @{{user.username}} <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}
-	 </a> 
-     {{else}}	 
-     EL @{{user.username}} 
-     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
-	 {{/if}}
-  {{/foreach}}
-</td>
+
 
 
 {{#if controller.currentUser.id}}
