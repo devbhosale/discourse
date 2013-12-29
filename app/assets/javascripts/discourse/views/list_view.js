@@ -17,8 +17,8 @@ Discourse.ListView = Discourse.View.extend({
      $("#bi_view_ul li > a").append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
      });
      
-     $('#bi_view_ul li a').text( 'View By | ' + $('#category-filter li.active a', '.list-controls').text()) ;
-     $("#bi_view_ul li a").append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
+     $('#bi_view_ul li > a').text( 'View By | ' + $('#category-filter li.active a', '.list-controls').text()) ;
+     $('#bi_view_ul li > a').append($('<i></i>').addClass('fa-caret-down').addClass('fa') );
      
      
   }
