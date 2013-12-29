@@ -1,7 +1,7 @@
 <td class='posters'>
   {{#each posters}}
+   {{_view.contentIndex}}
     @{{user.username}}
-      {{@key}}: {{this}}
     <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
   {{/each}}
 </td>
