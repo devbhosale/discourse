@@ -3,8 +3,8 @@
 
 <td class='posters'>
    {{#each posters}}
-       {{user.currentIndex}} @{{user.username}} 
-       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}</a>
+      
+       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="small"}}  {{user.currentIndex}} @{{user.username}} </a>
       
    {{/each}}
  </td>
