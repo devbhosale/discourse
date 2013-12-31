@@ -2,9 +2,11 @@
 
 
 <td class='posters'>
-   {{#each posters}}
+   {{#each posters itemViewClass="Em.View"}}
       
-       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}}  <br> @{{user.username}} </a>
+       <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}} 
+       
+       <br> @{{user.username}} :: {{view.contentIndex}} </a>
       
    {{/each}}
  </td>
