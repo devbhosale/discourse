@@ -3,10 +3,10 @@
 
 <td class='posters'>
    {{#each posters itemViewClass="Em.View"}}
-      {{#ifequal view.contentIndex  0}}
+      {{#if view.contentIndex == 0}}
         <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}} 
         <br> @{{user.username}}</a>
-      {{/ifequal}}
+      {{/if}}
    {{/each}}
  </td>
 
