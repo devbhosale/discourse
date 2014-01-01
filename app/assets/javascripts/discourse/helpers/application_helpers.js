@@ -52,11 +52,15 @@ Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
     }
 });
 
-Handlebars.registerHelper('if_eq', function(a, b, opts) {
-    if(a == b) // Or === depending on your needs
-        return opts.fn(this);
+Handlebars.registerHelper('if_eq', function(path, compareValue, options) {
+
+var lvalue = Ember.getPath(options.contexts[0], path);
+    var rvalue = parseInt(compareValue, 10); // convert to number since it's a string
+    
+    if(lvalue == rvalue) // Or === depending on your needs
+        return options.fn(this);
     else
-        return opts.inverse(this);
+        return options.inverse(this);
 });
 
 /** Devdutta added foreach **/
