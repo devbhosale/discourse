@@ -52,6 +52,8 @@ Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
     }
 });
 
+/** Modified based on http://stackoverflow.com/questions/10190986/access-index-value-while-iterating-ember-collection
+ **/
 Handlebars.registerHelper('if_eq', function(path, compareValue, options) {
 
 var lvalue = Ember.getPath(options.contexts[0], path);
