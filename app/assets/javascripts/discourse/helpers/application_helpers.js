@@ -70,7 +70,7 @@ var lvalue = path;
 });
 
 Ember.Handlebars.helper('bi_ifeq', function(a, b, options) {
-  if( a == b) return return options.fn(this); else return options.inverse(this);
+  if( a == b) return  options.fn(this); else return options.inverse(this);
 });
 
 /** Devdutta added foreach **/
