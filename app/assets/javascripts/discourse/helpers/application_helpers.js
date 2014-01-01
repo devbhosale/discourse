@@ -56,7 +56,8 @@ Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
  **/
 Handlebars.registerHelper('if_eq', function(path, compareValue, options) {
 
-var lvalue = Ember.get(options.contexts[0], path);
+var lvalue = path;
+//var lvalue = path.get('')
     var rvalue = parseInt(compareValue, 10); // convert to number since it's a string
     
     console.log("DEV:lvalue" +lvalue +":rvalue:" + rvalue + "::");
@@ -66,6 +67,10 @@ var lvalue = Ember.get(options.contexts[0], path);
         return options.fn(this);
     else
         return options.inverse(this);
+});
+
+Ember.Handlebars.helper('bi_ifeq', function(a, b, options) {
+  if( a == b) return true; else return false;
 });
 
 /** Devdutta added foreach **/
