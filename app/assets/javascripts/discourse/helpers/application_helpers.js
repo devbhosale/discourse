@@ -52,6 +52,13 @@ Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
     }
 });
 
+Handlebars.registerHelper('if_eq', function(a, b, opts) {
+    if(a == b) // Or === depending on your needs
+        return opts.fn(this);
+    else
+        return opts.inverse(this);
+});
+
 /** Devdutta added foreach **/
 /** usage
  *  <div class="carousel-inner">
