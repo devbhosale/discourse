@@ -4,7 +4,7 @@
 <td class='posters'>
    {{#each posters itemViewClass="Em.View"}}
     {{ view.contentIndex }}
-      {{#ifequal 0  0"}}
+      {{#ifequal 0  0}}
         <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}} 
         <br> @{{user.username}}</a>
       {{/ifequal}}
