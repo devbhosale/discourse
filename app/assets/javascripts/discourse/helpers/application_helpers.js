@@ -60,7 +60,7 @@ var lvalue = Ember.get(options.contexts[0], path);
     var rvalue = parseInt(compareValue, 10); // convert to number since it's a string
     
     console.log("DEV:lvalue" +lvalue +":rvalue:" + rvalue + "::");
-    JSON.stringify(options, undefined, 2);
+   // JSON.stringify(options, undefined, 2);
     
     if(lvalue == rvalue) // Or === depending on your needs
         return options.fn(this);
