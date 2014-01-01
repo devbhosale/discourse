@@ -44,7 +44,7 @@ Handlebars.registerHelper("each_with_index", function(array, block) {
 **/
 
 Handlebars.registerHelper('ifequal', function (val1, val2, fn, elseFn) {
-    if (val1 === val2) {
+    if (val1 == val2) {
         return fn();
     }
     else if (elseFn) {
