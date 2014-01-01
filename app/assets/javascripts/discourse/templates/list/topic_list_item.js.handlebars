@@ -3,7 +3,7 @@
 
 <td class='posters'>
    {{#each posters itemViewClass="Em.View"}}
-      {{#if_eq view.contentIndex  0}}
+      {{#if_eq {{view.contentIndex}}  0}}
         <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}} 
         <br> @{{user.username}}</a>
       {{/if_eq}}
