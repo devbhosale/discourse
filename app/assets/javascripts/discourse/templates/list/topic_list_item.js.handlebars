@@ -4,8 +4,10 @@
 <td class='posters'>
    {{#each posters itemViewClass="Em.View"}}
       {{#bi_ifeq view.contentIndex  0}}
+        <div class="bi_topicavatar">
         <a href="{{user.path}}" class="{{extras}}">{{avatar this usernamePath="user.username" imageSize="medium"}} 
         <br> @{{user.username}}</a>
+        </div>
       {{/bi_ifeq}}
    {{/each}}
  </td>
