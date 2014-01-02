@@ -26,11 +26,7 @@ Discourse.TopicListItemView = Discourse.GroupedView.extend({
   },
 
   didInsertElement: function() {
-    
     //devdutta
-    
-    
-    
     var session = Discourse.Session.current();
 
     // highligth the last topic viewed
