@@ -55,8 +55,10 @@ class ListableTopicSerializer < BasicTopicSerializer
   end
   alias :include_new_posts? :seen
 
+ # Devdutta attempt to include excerpt for all posts comment out pinned and add true.
   def include_excerpt?
-    pinned
+    #pinned
+    true
   end
 
   def excerpt
