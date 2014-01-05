@@ -287,7 +287,10 @@ Discourse.Topic = Discourse.Model.extend({
   },
 
   excerptNotEmpty: Em.computed.notEmpty('excerpt'),
-  hasExcerpt: Em.computed.and('pinned', 'excerptNotEmpty'),
+  // Devdutta changed hasExcerpt to remove testing for pinned commented out pinned and added true
+  //hasExcerpt: Em.computed.and('pinned', 'excerptNotEmpty'),
+  
+  hasExcerpt: Em.computed.and(true, 'excerptNotEmpty
 
   excerptTruncated: function() {
     var e = this.get('excerpt');
