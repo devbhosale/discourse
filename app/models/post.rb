@@ -219,7 +219,9 @@ class Post < ActiveRecord::Base
 
   def self.excerpt(cooked, maxlength = nil, options = {})
     maxlength ||= SiteSetting.post_excerpt_maxlength
-    PrettyText.excerpt(cooked, maxlength, options)
+    #Devdutta changed following line so that remove image options 
+    #PrettyText.excerpt(cooked, maxlength, options)
+    PrettyText.excerpt(cooked, maxlength, {strip_links: true, markdown_images: false})
   end
 
   # Strip out most of the markup
