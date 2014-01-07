@@ -32,7 +32,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
 
         # If include_images is set, include the image in markdown
         characters("!") if @markdown_images
-
+        Rails.logger.error "image 1"
         attributes = Hash[*attributes.flatten]
         if attributes["alt"]
           characters("[#{attributes["alt"]}]")
@@ -41,9 +41,9 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         else
           characters("[image]")
         end
-
+        Rails.logger.error "image 2"
         characters("(#{attributes['src']})") if @markdown_images
-
+        Rails.logger.error "image 3"
       when "a"
         unless @strip_links
           include_tag(name, attributes)
