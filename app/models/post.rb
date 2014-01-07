@@ -222,7 +222,7 @@ class Post < ActiveRecord::Base
     #Devdutta changed following line so that remove image options 
     #PrettyText.excerpt(cooked, maxlength, options)
     Rails.logger.error "DEVDUTTA: test prettytext"
-    PrettyText.excerpt(cooked, maxlength, {:strip_links => true,  :markdown_images: false})
+    PrettyText.excerpt(cooked, maxlength, {:strip_links => true,  :markdown_images => false})
   end
 
   # Strip out most of the markup
