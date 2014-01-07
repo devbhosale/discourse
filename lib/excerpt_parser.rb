@@ -29,7 +29,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
   def start_element(name, attributes=[])
     case name
       when "img"
-
+        Rails.logger.error "entered image 1"
         # If include_images is set, include the image in markdown
         characters("!") if @markdown_images
         Rails.logger.error "image 1"
