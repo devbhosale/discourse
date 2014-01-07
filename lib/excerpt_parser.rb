@@ -10,6 +10,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
     @strip_links = options[:strip_links] == true
     @text_entities = options[:text_entities] == true
     @markdown_images = options[:markdown_images] == true
+    @bi_suppress_image = options[:bi_suppress_image] == true
   end
 
   def self.get_excerpt(html, length, options)
@@ -29,22 +30,21 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
   def start_element(name, attributes=[])
     case name
       when "img"
-        Rails.logger.error "entered image 1"
-        
-        # If include_images is set, include the image in markdown
-        characters("!") if @markdown_images
-        Rails.logger.error "image 1"
-        attributes = Hash[*attributes.flatten]
-        if attributes["alt"]
-          characters("[#{attributes["alt"]}]")
-        elsif attributes["title"]
-          characters("[#{attributes["title"]}]")
-        else
-          characters("[imageDD]")
-        end
-        Rails.logger.error "image 2"
-        characters("(#{attributes['src']})") if @markdown_images
-        Rails.logger.error "image 3"
+         
+        if @bi_suppress_image != true
+          Rails.logger.error "entered inside bi_suppress image"
+          # If include_images is set, include the image in markdown
+          characters("!") if @markdown_images
+          attributes = Hash[*attributes.flatten]
+          if attributes["alt"]
+            characters("[#{attributes["alt"]}]")
+            elsif attributes["title"]
+            characters("[#{attributes["title"]}]")
+            else
+            characters("[imageDD]")
+          end
+          characters("(#{attributes['src']})") if @markdown_images
+        end 
       when "a"
         unless @strip_links
           include_tag(name, attributes)
