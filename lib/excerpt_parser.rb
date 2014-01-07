@@ -40,7 +40,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         elsif attributes["title"]
           characters("[#{attributes["title"]}]")
         else
-          characters("[image]")
+          characters("[imageDD]")
         end
         Rails.logger.error "image 2"
         characters("(#{attributes['src']})") if @markdown_images
