@@ -54,6 +54,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         @in_quote = true
       when "span"
         if attributes["class"] @in_quote = true
+        end
     end
   end
 
