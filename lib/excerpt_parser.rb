@@ -52,6 +52,8 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         end
       when "aside"
         @in_quote = true
+      when "span"
+        if attributes["class"] @in_quote = true
     end
   end
 
@@ -66,7 +68,8 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
       characters(" ")
     when "aside"
       @in_quote = false
-    end
+    when "span"
+      @in_quote = false
   end
 
   def characters(string, truncate = true, count_it = true, encode = true)
