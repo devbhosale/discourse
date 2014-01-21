@@ -54,7 +54,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         @in_quote = true
         #following when span added by Devdutta
       when "span"
-        @in_quote = true
+        @in_quote = false
         end
     end
   end
