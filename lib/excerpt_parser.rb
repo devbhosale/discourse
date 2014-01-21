@@ -57,7 +57,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         @in_quote = true
         end
     end
-  end
+  
 
   def end_element(name)
     case name
