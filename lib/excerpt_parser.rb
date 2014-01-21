@@ -54,7 +54,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
         @in_quote = true
         #following when span added by Devdutta
       when "span"
-        @in_quote = false
+        @in_quote = true
         end
     end
   end
@@ -72,6 +72,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
       @in_quote = false
     when "span"
       @in_quote = false
+    end
   end
 
   def characters(string, truncate = true, count_it = true, encode = true)
