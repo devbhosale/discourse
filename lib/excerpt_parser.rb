@@ -75,6 +75,7 @@ class ExcerptParser < Nokogiri::XML::SAX::Document
     end
   end
 
+
   def characters(string, truncate = true, count_it = true, encode = true)
     return if @in_quote
     encode = encode ? lambda{|s| ERB::Util.html_escape(s)} : lambda {|s| s}
